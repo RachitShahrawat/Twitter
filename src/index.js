@@ -21,11 +21,13 @@ app.listen(3000, async ()=>{
     // await tweet.save();
 
     const tweetRepo=new TweetRepository;
+    await tweetRepo.create({content:'With hooks'});
 
-    const tweet=await tweetRepo.create({content:'tweet with comment schema'});
-    console.log(tweet);
-    const comment=await Comment.create({content:'new comment'});
-    tweet.comments.push(comment);
-    await tweet.save();
-    console.log(tweet);
+    // const tweet=await tweetRepo.create({content:'tweet with comment schema'});
+    // console.log(tweet);
+    // const comment=await Comment.create({content:'new comment'});
+    // tweet.comments.push(comment);
+    // const tweet=await tweetRepo.getAll(2,4)
+    // await tweet.save();
+    // console.log(tweet[0].contentWithEmail);
 })
